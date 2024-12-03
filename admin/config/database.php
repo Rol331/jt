@@ -3,8 +3,8 @@ class Database {
     // Parámetros de la base de datos
     private $host = "localhost";
     private $db_name = "jt";
-    private $username = "root";
-    private $password = "321";
+    private $username = "inacons";
+    private $password = "inacons";
     public $conn;
 
     // Obtener la conexión de la base de datos

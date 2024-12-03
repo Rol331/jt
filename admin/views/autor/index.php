@@ -1,3 +1,8 @@
+<?php
+require_once '../controllers/AutorController.php';                                                                                                    
+ $autorController = new AutorController();                                                                                                                      
+ $autores = $autorController->index();  
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -20,7 +25,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php while ($row = $result->fetch(PDO::FETCH_ASSOC)): ?>
+                <?php foreach ($autores as $autor): ?>   
                     <tr>
                         <td><?php echo $row['id']; ?></td>
                         <td><?php echo $row['nombre']; ?></td>
@@ -30,7 +35,7 @@
                             <a href="index.php?action=delete&id=<?php echo $row['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro de que quieres eliminar este autor?')">Eliminar</a>
                         </td>
                     </tr>
-                <?php endwhile; ?>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>
